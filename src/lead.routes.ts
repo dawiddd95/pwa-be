@@ -10,6 +10,7 @@ const router = express.Router();
 
 // Definiujemy endpoint POST / (np. /api/leads) do dodania nowego leada
 router.post('/', async (req, res) => {
+  console.log('DOSTAŁEM:', req.body); // Dodaj ten log
   // Destrukturyzujemy name i email z ciała żądania
   const { name, email } = req.body;
 
