@@ -3,7 +3,7 @@ import express from 'express';
 // Import połączenia do bazy danych (zdefiniowanego w db.ts)
 import { db } from './db';
 // Import funkcji do wysyłania powiadomień push
-import { sendNotificationToAll } from './push';
+// import { sendNotificationToAll } from './push';
 
 // Tworzymy router Expressa – osobną przestrzeń endpointów
 const router = express.Router();
@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
   );
 
   // Wysyłamy powiadomienie push do wszystkich zarejestrowanych subskrypcji
-  await sendNotificationToAll(`Nowy lead: ${name}`, `${email} właśnie się zapisał`);
+  // await sendNotificationToAll(`Nowy lead: ${name}`, `${email} właśnie się zapisał`);
 
   // Zwracamy status 201 Created bez treści
   res.sendStatus(201);
