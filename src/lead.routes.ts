@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
 
   // Wykonujemy zapytanie SQL do bazy danych – INSERT nowego leada z aktualną datą
   await db.query(
-    'INSERT INTO leads(name, email, created_at) VALUES($1, $2, NOW())',
+    'INSERT INTO leads(name, email) VALUES($1, $2)',
     [name, email] // wartości podstawione do zapytania (zapobiega SQL injection)
   );
 
@@ -24,6 +24,11 @@ router.post('/', async (req, res) => {
 
   // Zwracamy status 201 Created bez treści
   res.sendStatus(201);
+});
+
+router.get('/', async (req, res) => {
+  // Zwracamy status 201 Created bez treści
+  res.json({success: 'Udało się'})
 });
 
 // Eksportujemy router do użycia w głównym pliku serwera
