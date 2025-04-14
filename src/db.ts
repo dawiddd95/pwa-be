@@ -9,5 +9,5 @@ dotenv.config();
 
 // Tworzymy i eksportujemy pulę połączeń do bazy PostgreSQL
 export const db = new Pool({
-  connectionString: 'postgresql://postgres:PppRcUbWtcQnnzpOpIRhVOwcptYXxcZd@postgres.railway.internal:5432/railway' // Ładujemy connection string z pliku .env
+  connectionString: 'postgresql://postgres:admin123@localhost:5432/leadsdb' // Ładujemy connection string z pliku .env
 });
